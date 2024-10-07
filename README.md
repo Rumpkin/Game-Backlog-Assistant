@@ -40,11 +40,7 @@ git clone https://github.com/Rumpkin/Game-Backlog-Assistant.git
 cd Game-Backlog-Assistant
 ```
 
-2. Install the required dependencies:
-```
-pip install -r requirements.txt
-```
-3. Set up your environment variables:
+2. Set up your environment variables:
 
 - Open the secrets.json file in the project root directory
 - Add the following environment variables as requested
@@ -97,11 +93,7 @@ You can find you IGDB Client ID and Secret if you manage your Twitch Application
 
 ## Usage
 
-Run the main script to start the program:
-
-```
-python main.py
-```
+Run the "Start Windows.bat" or "Start Linux.sh" script to start the program:
 
 Once started, the program will prompt you with whether you want to add a single game or a list of games:
 

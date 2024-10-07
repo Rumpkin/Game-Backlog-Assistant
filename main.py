@@ -95,10 +95,36 @@ def write_row(client, database_id, coverLink, title, consoles, releaseDate, onli
         }
     )
 
+# Adicionado ao código original
+def check_game(client, database_id, title):
+    response = client.databases.query(database_id, 
+        **{
+            "filter": {
+                "property": "title",
+                "title": {
+                    "equals": title
+                }
+            }
+        }
+    )
+
+    if len(response['results']) != 0:
+        return True
+    else:  
+        return False
+
 def write_game(client, title, debug = False):
     print('--- Adding ' + title + ' ---')
     failed = False
     consoles = list()
+
+    # Adicionado ao código original
+    gameExists = check_game(client, notion_database_id, title)
+    if gameExists:
+        print(f"{title} already exists in database!")
+        failed = True
+        return failed
+
 
     consolesData = getGamePlatforms(title, debug)
     if (consolesData != None):

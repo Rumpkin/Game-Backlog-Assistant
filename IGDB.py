@@ -203,7 +203,8 @@ def getCoverLink(id):
     if response.status_code == 200:
         try:
             key = response.json()[0]['url'].split('t_thumb/')[1]
-            return f"https://images.igdb.com/igdb/image/upload/t_cover_big/{key}";   
+            #return f"https://images.igdb.com/igdb/image/upload/t_cover_big/{key}";   
+            return f"https://images.igdb.com/igdb/image/upload/t_1080p_2x/{key}";   
         except Exception:
             print("Failed to find Cover Link")
     else:
